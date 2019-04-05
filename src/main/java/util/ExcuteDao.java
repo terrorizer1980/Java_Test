@@ -1,4 +1,8 @@
 package util;
+/**
+ * @zhbl
+ * 根据testId读取数据库中的测试用例数据
+ */
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
@@ -30,6 +34,11 @@ public class ExcuteDao {
     }
     public String getPassword(){
         return password;
+    }
+    public void closeDB() throws SQLException {
+        conn.close();
+        rs.close();
+        stmt.close();
     }
 
     public static void main(String[] args) throws Exception {
